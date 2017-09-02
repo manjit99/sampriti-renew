@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | Sampriti</title>
+
+	<!-- core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="{% static 'images/ico/favicon2.ico' %}">
+    {# <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">#}
+    {# <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">#}
+    {# <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">#}
+    {# <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">#}
+</head><!--/head-->
+
+<body class="homepage">
+
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-8 col-xs-offset-6">
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"> <p class="animation animated-item-1" style="color:#FFD700; font-size:57px; font-style:oblique;">Sampriti</p></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Archive <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                              <ul class="dropdown-menu">
+                                <li><a href="https://drive.google.com/open?id=0BxoTVIXCgXEMdkFQa0w5VmVuSU0" target="_blank">Sampriti-2017-vol-I</a></li>
+                                <li><a href="https://drive.google.com/open?id=0BxoTVIXCgXEMYVRXSFZMS0FMdFU" target="_blank">Sampriti-2016-vol-II</a></li>
+                                <li><a href="https://drive.google.com/open?id=0BxoTVIXCgXEMaHNlT0tVaGtTemM" target="_blank">Sampriti-2016-vol-I</a></li>
+                                <li><a href="https://drive.google.com/open?id=0BxoTVIXCgXEMRTU4czlDRkRycnM" target="_blank">Sampriti-2015-vol-I</a></li>
+                                <li><a href="https://www.facebook.com/pg/Sampriti-329213267464478/posts/?ref=page_internal" target="_blank">Sampriti-facebook</a></li>
+                              </ul>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Editorial Board <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/guide/">Guidelines</a></li>
+                                <li><a href="/chief/">Chief Editor</a></li>
+                                <li><a href="/advisory/">Advisory board</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+
+    </header><!--/header-->
+
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <div class="carousel-inner">
+
+                <div class="item active" style="background-image: url({% static 'images/slider/bg1.jpg' %})">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1" style="color:#FFD700; font-size:50px;">Welcome to</h1>
+                                    <h2 class="animation animated-item-2" style="color:#FFD700; font-size:35px;">Sampriti</h2>
+                                    <h2 class="animation animated-item-2" style="color:#FFD700">ISSN: 2454-3837</h2>
+                                    <!--<a class="btn-slide animation animated-item-3" href="#" >Read More</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+
+    </section><!--/#main-slider-->
+    <section id="blog" class="container">
+        <div class="center">
+            <h2>Recent Posts</h2>
+        </div>
+
+        <div class="blog">
+            <div class="row">
+                 <div class="col-md-8 col-lg-offset-2">
+                    <div class="blog-item">
+                        <div class="row">
+                          {% for obj in object_list %}
+                            <div class="col-xs-12 col-sm-2 text-center">
+                                <div class="entry-meta">
+                                    <span id="publish_date">{{ obj.Timestamp }}</span>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-10 blog-content">
+                                <h2><a {% if obj.Readmore %} href="{{ obj.Readmore }}" {% endif %}>{{ obj.Title }}</a></h2>
+                                <h3>{{ obj.About }}</h3>
+                                {% if obj.Readmore %}<a class="btn btn-primary readmore" target="_blank" href="{{ obj.Readmore }}">{{ obj.SecondTitle }} <i class="fa fa-angle-right"></i></a>{% endif %}
+                                <br><br><br><br>
+                            </div>
+                          {% endfor %}
+                        </div>
+                    </div><!--/.blog-item-->
+                </div><!--/.col-md-8-->
+            </div><!--/.row-->
+        </div>
+    </section><!--/#blog-->
+
+
+    <br><br>
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-6">
+                    <ul class="pull-right">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact Us</a></li>
+                        <li><a href="#">All Rights Reserved</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+</body>
+</html>
